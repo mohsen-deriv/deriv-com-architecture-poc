@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@deriv-com/design-system": ["libs/design-system/src/index.ts"],
+      "@deriv-com/features": ["libs/features/src/index.ts"],
       "@deriv-com/hooks": ["libs/hooks/src/index.ts"],
       "@deriv-com/images": ["libs/images/src/index.ts"],
       "@deriv-com/pages": ["libs/pages/src/index.ts"],

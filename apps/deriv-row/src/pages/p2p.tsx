@@ -1,12 +1,12 @@
 import type { HeadFC, PageProps } from 'gatsby';
 import { P2p, SeoConfig } from '@deriv-com/pages';
-import { EuLayout } from '@deriv-com/features';
+import { RowLayout } from '@deriv-com/features';
 
 const P2PPage: React.FC<PageProps> = () => {
   return (
-    <EuLayout>
+    <RowLayout>
       <P2p />
-    </EuLayout>
+    </RowLayout>
   );
 };
 
