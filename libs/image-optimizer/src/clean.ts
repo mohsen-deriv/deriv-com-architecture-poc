@@ -3,7 +3,11 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 // TODO: remove the json file as well
-const foldersToBeRemoved = [...PROJECTS_EXPORT_FOLDERS, DEFAULT_EXPORT_FOLDER];
+const foldersToBeRemoved = [
+  ...PROJECTS_EXPORT_FOLDERS,
+  DEFAULT_EXPORT_FOLDER,
+  'libs/images/assets/next-image-export-optimizer-hashes.json',
+];
 foldersToBeRemoved.forEach((folder) => {
   fs.rmSync(path.resolve(folder), { recursive: true, force: true });
 });

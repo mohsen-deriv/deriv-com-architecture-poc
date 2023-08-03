@@ -20,7 +20,7 @@ import defineProgressBar from './progress-bar';
 const optimizeImages = async () => {
   console.log('---- Deriv Image Optimizer: Begin with optimization... ---- ');
 
-  const deviceSizes = [640, 750, 828, 1080, 1200, 1920, 2048, 3840];
+  const deviceSizes = [640, 750, 828, 1080, 1200, 1920, 2048];
   const quality = 75;
   const storePicturesInWEBP = true;
   const blurSize: number[] = [];
