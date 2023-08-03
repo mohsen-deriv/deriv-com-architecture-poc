@@ -1,0 +1,51 @@
+{
+  "name": "image-optimizer",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/image-optimizer/src",
+  "projectType": "library",
+  "targets": {
+    "clean": {
+      "command": "ts-node libs/image-optimizer/src/clean.ts"
+    },
+    "optimize": {
+      "executor": "@nx/js:node",
+      "options": {
+        "buildTarget": "image-optimizer:build",
+        "watch": false,
+        "inspect": false
+      }
+    },
+    "build": {
+      "executor": "@nx/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/image-optimizer",
+        "main": "libs/image-optimizer/src/index.ts",
+        "tsConfig": "libs/image-optimizer/tsconfig.lib.json",
+        "assets": ["libs/image-optimizer/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/image-optimizer/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/image-optimizer/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}
